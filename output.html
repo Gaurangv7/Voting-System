@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Python Voting System - Documentation</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: #fff;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            color: #2c3e50;
+        }
+        h2 {
+            color: #2980b9;
+            border-left: 5px solid #2980b9;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        h3 { color: #555; }
+        .box {
+            background: #f4f6f7;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .portfolio-section {
+            margin-top: 50px;
+            border: 2px solid #2c3e50;
+            padding: 30px;
+            background-color: #fdfdfd;
+        }
+        .page-break { page-break-before: always; }
+        code { background-color: #eee; padding: 2px 4px; font-family: monospace; }
+        ul { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center; margin-bottom: 50px;">
+        <br><br>
+        <h1>Digital Voting System</h1>
+        <h3>A Python-Based Command Line Application</h3>
+        <p><strong>Submitted by:</strong> [Your Name Here]</p>
+        <p><strong>Language:</strong> Python 3.x</p>
+    </div>
+
+    <h2>1. Abstract</h2>
+    <p>Traditional paper-based voting is prone to errors and slow counting processes. This project, the <strong>Digital Voting System</strong>, is a Python-based application designed to automate the election process. It features distinct modules for Administrators (to set up elections) and Voters (to cast ballots), ensuring a secure, efficient, and immediate tallying of results without the need for manual calculation.</p>
+
+    <h2>2. System Features</h2>
+    <ul>
+        <li><strong>Secure Admin Panel:</strong> Protected by a password, allowing only authorized personnel to add candidates or reset the election.</li>
+        <li><strong>Voter Authentication:</strong> Uses unique Voter IDs to ensure that each individual can only vote exactly once.</li>
+        <li><strong>Double-Voting Prevention:</strong> The system checks an internal database of cast IDs before allowing a vote.</li>
+        <li><strong>Real-Time Results:</strong> Automatically sorts candidates by vote count and declares a winner (or identifies a tie).</li>
+    </ul>
+
+    <h2>3. Technical Architecture</h2>
+    <p>The project is built using <strong>Object-Oriented Programming (OOP)</strong> principles in Python.</p>
+    <div class="box">
+        <strong>Data Structures Used:</strong>
+        <ul>
+            <li><code>Dictionary (Hash Map)</code>: Used to store Candidate Names as keys and their Vote Counts as values for O(1) access time.</li>
+            <li><code>List</code>: Used to store the IDs of users who have already voted to track participation.</li>
+        </ul>
+    </div>
+
+    <h2>4. Algorithm Logic</h2>
+    <p><strong>Vote Capture Logic:</strong><br>
+    When a user inputs their ID, the system scans the <code>voters</code> list. If the ID exists, access is denied. If not, the vote is recorded, the ID is appended to the list, and the candidate's count in the dictionary is incremented.</p>
+    
+    <p><strong>Result Calculation:</strong><br>
+    To find the winner, the dictionary items are converted to a list of tuples and sorted using a <code>Lambda function</code> based on the vote count in descending order.</p>
+
+    <h2>5. Conclusion</h2>
+    <p>This project demonstrates the power of Python for creating logic-based applications. It successfully solves the core problems of voting: security, accuracy, and speed. Future improvements could include file handling (saving results to .txt or .csv) and a GUI interface using Tkinter.</p>
+
+    <div class="page-break"></div>
+
+    <div class="portfolio-section">
+        <h2 style="margin-top: 0; border: none; color: #333;">Portfolio / Resume Entry</h2>
+        <p><em>Copy the text below into your CV or Project Portfolio:</em></p>
+        <hr>
+        
+        <h3>Project: Secure CLI Voting System</h3>
+        <p><strong>Technologies:</strong> Python, Data Structures (Dicts/Lists), Algorithms</p>
+        
+        <p><strong>Description:</strong><br>
+        Designed and developed a command-line application to facilitate digital elections. The system differentiates between Admin and Voter privileges to ensure election integrity.</p>
+        
+        <p><strong>Key Technical Achievements:</strong></p>
+        <ul>
+            <li><strong>Algorithm Design:</strong> Implemented a sorting algorithm to process election results dynamically and handle tie-breaker scenarios.</li>
+            <li><strong>Data Validation:</strong> Created a strict validation logic to prevent duplicate entries (double voting) using list lookups.</li>
+            <li><strong>OOP Implementation:</strong> Encapsulated election logic within a class structure to maintain clean, reusable code.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
